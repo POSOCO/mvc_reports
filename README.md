@@ -1,6 +1,7 @@
 # Excel Reports Notes
 
 ## Controller Functions Documentation
+
 ### General Controllers
 ```vba
 Function NAG_HSEARCH(rng As Range, str As String, vOffset As Double) As Range
@@ -71,6 +72,92 @@ ___
 Function NAG_STR_TO_LEVEL(str As String)
 ```
 > Detects SCADA voltage point **str** measurement level  like **NAG_STR_TO_LEVEL("DHUL4 4_B1 KV") = 400**
+___
+
+
+### SCADA Data General Controllers
+```vba
+Function NAG_TB_VAL(rng As Range, tb As Double)
+```
+> Gets the value of time block **tb** from a column of 1440 rows each corresponding  to each minute data. Here **rng ** is the cell range of first row of data in the value column
+___
+
+```vba
+Function NAG_TB_MAX_VAL(rng As Range)
+
+Function NAG_TB_MIN_VAL(rng As Range)
+
+Function NAG_TB_AVG_VAL(rng As Range)
+```
+> Gets the maximum, minimum and average value of all the time block values from a column of 1440 rows each corresponding  to each minute data. Here **rng ** is the cell range of first row of data in the value column
+___
+
+```vba
+Function NAG_TB_MAX_TBLK(rng As Range)
+
+Function NAG_TB_MIN_TBLK(rng As Range)
+```
+> Gets the time block number at which maximum and minimum time block value occcurs from a column of 1440 rows each corresponding  to each minute data. Here **rng ** is the cell range of first row of data in the value column
+___
+
+```vba
+Function NAG_TB_MU_VAL(rng As Range)
+```
+> Gets the MU value by calculating 96 time blocks values from a column of 1440 rows each corresponding  to each minute data. Here **rng ** is the cell range of first row of data in the value column
+___
+
+```vba
+Function NAG_TB_UI_VAL(schRng As Range, actRng As Range, tb As Double)
+```
+> Same as **NAG_TB_VAL**. Here **schRng **,  **actRng ** are the cell range of first row of schedule and actual data in the value column that has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_TB_MAX_UI_VAL(schRng As Range, actRng As Range)
+
+Function NAG_TB_MIN_UI_VAL(schRng As Range, actRng As Range)
+
+Function NAG_TB_AVG_UI_VAL(schRng As Range, actRng As Range)
+```
+> Same as **NAG_TB_MAX_VAL**, **NAG_TB_MIN_VAL**, **NAG_TB_AVG_VAL**. Here **schRng **,  **actRng ** are the cell range of first row of schedule and actual data in the value column that has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_TB_MAX_UI_TBLK(schRng As Range, actRng As Range)
+
+Function NAG_TB_MIN_UI_TBLK(schRng As Range, actRng As Range)
+```
+> Same as **NAG_TB_MAX_TBLK**, **NAG_TB_MIN_TBLK**. Here **schRng **,  **actRng ** are the cell range of first row of schedule and actual data in the value column that has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_TB_MU_UI_VAL(schRng As Range, actRng As Range)
+```
+> Same as **NAG_TB_MU_VAL**. Here **schRng **,  **actRng ** are the cell range of first row of schedule and actual data in the value column that has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_HINST_VAL(firstCellRng As Range, attr As String, rows As Integer)
+```
+> Get the information about the vertical column of data. Here **attr** can be *MAX*, *MIN*, *SUM*, *AVG*. **rows** is number of rows of column to be considered for calculation  
+___
+
+```vba
+Function NAG_HINST_VAL_ROW(firstCellRng As Range, attr As String, rows As Integer)
+```
+> Get the row at which max or minimum data value occurs in a column of cells. Here **attr** can be *MAX*, *MIN*. **rows** is number of rows of column to be considered for calculation  
+___
+
+```vba
+Function NAG_HINST_UI_VAL(firstSchCellRng As Range, firstActCellRng As Range, attr As String, rows As Integer)
+```
+> Same as **NAG_HINST_VAL** 
+___
+
+```vba
+Function NAG_HINST_UI_VAL_ROW(firstSchCellRng As Range, firstActCellRng As Range, attr As String, rows As Integer)
+```
+> Same as **NAG_HINST_VAL_ROW** 
 ___
 
 
