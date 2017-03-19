@@ -215,6 +215,36 @@ Function MVC_SIGN_CHNG_COUNT(firstCellRng As Range, rows As Integer)
 > Here **firstCellRng ** is the first cell range of the state UI report column
 ___
 
+###Constituent Data Controllers ("CONST_DATA" sheet)
+```vba
+Function MVC_CONST_DATA(constStr As String, attr As String)
+```
+> Get the constituent data for the constituent **constStr** (**GUJ, MP, CHG, MAH, GOA, DD, DNH, ESIL**)
+> Same as **NAG_TABLE_EXACT_SEARCH(NAG_TABLE_HRange("CONST_DATA"), constStr, NAG_TABLE_VRange("CONST_DATA"), attr)**
+___
+
+### IRE Data Controllers ("IRE" sheet)
+```vba
+Function MVC_IRE_VAL(lineStr As String, attr As String)
+```
+> Get the inter regional link data attribute **attr** (can be **LINK, IMPMW	EXPMW, IMPMU, EXPMU**) for the link **lineStr**
+> Same as **NAG_TABLE_EXACT_SEARCH(NAG_TABLE_HRange("IRE"), attr, NAG_TABLE_VRange("IRE"), lineStr)**
+___
+
+```vba
+Function IRE_GET_NET_MU(pathStr As String, isImport As Integer)
+```
+> Get the inter regional link NET MUS for the link **pathStr** (can be **WR-NR, WR-SR, WR-ER**) for the link **lineStr**
+___
+
+```vba
+Function MVC_IRE_GET_LINK(lineStr As String)
+```
+> Get the link name of a line **lineStr ** (result can be **WR-NR, WR-SR, WR-ER**)
+> No need to use this since we can use **MVC_IRE_VAL** for this purpose
+___
+
+
 ## ToDOs
 1. Create better funnctions for frequency calculations
 2. Create UI calculation for generators in GEN sheets
