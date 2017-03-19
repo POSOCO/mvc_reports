@@ -244,6 +244,51 @@ Function MVC_IRE_GET_LINK(lineStr As String)
 > No need to use this since we can use **MVC_IRE_VAL** for this purpose
 ___
 
+### Schedule Data Controllers ("CONST_SCH, FLOW_GATE_SCH, ISGS_DC, ISGS_SCH" sheets)
+```vba
+Function MVC_GET_STATE_SCH(state_Str As String, attr As String, timeBlkStr As String)
+```
+> Get the state schedule data attribute **attr** for a timeBlock **timeBlkStr**
+> attr can be **OA, EXCH, ISGS, MTOA, STOA, LTA, IEX, PXI, URS, RRAS, Total**
+> **timeBlkStr** can be a number between **1 to 96** or **MU** if we want to get MU value
+___
+
+```vba
+Function MVC_GET_FLOW_GATE_SCH(pathStr As String, attr As String, timeBlkStr As String)
+```
+> Get the schedule of a flow gate path **pathStr**
+> **timeBlkStr** can be a number between **1 to 96** or **MU** if we want to get MU value
+> **attr** can be **Total, ATC Margin, Net**
+___
+
+```vba
+Function MVC_GET_ISGS_SCH(genStr As String, attr As String, timeBlkStr As String)
+```
+> Get the ISGS schedule of a generator **genStr**
+> **timeBlkStr** can be a number between **1 to 96** or **MU** if we want to get MU value
+> **attr** can be **DC, SCH**
+___
+
+### Frequency Data Controllers ("FREQ" sheet)
+```vba
+Function MVC_FREQ_PERCENTAGE(firstCellRng As Range, lowVal As Double, highVal As Double)
+```
+> Calculate percenetage of freq samples with first cell range as **firstCellRng **
+___
+
+```vba
+Function MVC_CALC_FVI(firstCellRng As Range)
+```
+> Calculate FVI for freq column with first cell range as **firstCellRng **
+___
+
+```vba
+Function MVC_QUARTERLY_MAX(firstCellRng As Range)
+Function MVC_QUARTERLY_MIN(firstCellRng As Range)
+Function MVC_QUARTERLY_MAX_TIME(firstCellRng As Range)
+Function MVC_QUARTERLY_MIN_TIME(firstCellRng As Range)
+```
+___
 
 ## ToDOs
 1. Create better funnctions for frequency calculations
