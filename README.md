@@ -294,6 +294,11 @@ ___
 1. Create better funnctions for frequency calculations
 2. Create UI calculation for generators in GEN sheets
 
+
+## Important Formulas
+1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
+
+
 ## Useful Links
 1. Excel formula Calculation time saving tips - [http://professor-excel.com/15-ways-to-speed-up-excel/](http://professor-excel.com/15-ways-to-speed-up-excel/)
 2. Online github md editor - [http://dillinger.io/](http://dillinger.io/) , [https://stackedit.io/editor](https://stackedit.io/editor)
