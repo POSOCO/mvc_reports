@@ -291,9 +291,10 @@ Function MVC_QUARTERLY_MIN_TIME(firstCellRng As Range)
 ___
 
 ## ToDOs
-1. Create better funnctions for frequency calculations
-2. Create UI calculation for generators in GEN sheets
-
+1. Add documenatation for NAG_TAB_SEARCH function
+2. Create better funnctions for frequency calculations
+3. Create UI calculation for generators in GEN sheets
+4. Use multiple arguments for creating NAG_TB_UI functions for KAWAS GANDHAR RGPPL generators - [http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb](http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb)
 
 ## Important Formulas
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
