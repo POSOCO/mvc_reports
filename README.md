@@ -298,7 +298,11 @@ ___
 
 ## Important Formulas
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
-
+2. Thermal_Gen_mu = demand_met_mu(availability_mu) - drawal_mu - solar_mu - hydro_mu - wind_mu
+3. Requirement_mu = demand_met_mu + shortfall_mu
+4. Availability_mu = drawal_mu + state_gen_mu
+5. Availability_mu = requirement_mu - shortfall_mu
+6. shortfall_mu = load_shedding + freq_correction
 
 ## Useful Links
 1. Excel formula Calculation time saving tips - [http://professor-excel.com/15-ways-to-speed-up-excel/](http://professor-excel.com/15-ways-to-speed-up-excel/)
