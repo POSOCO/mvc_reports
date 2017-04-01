@@ -28,6 +28,12 @@ Function NAG_TABLE_EXACT_SEARCH(hRng As Range, hStr As String, vRng As Range, vS
 ___
 
 ```vba
+Function NAG_TAB_SEARCH(tabStr As String, hStr As String, vStr As String) As Range
+```
+> Same as NAG_TABLE_EXACT_SEARCH(NAG_TABLE_HRange(tabStr), hStr, NAG_TABLE_VRange(tabStr), vStr)
+___
+
+```vba
 Function NAG_HSEARCH_TWO(topRng As Range, topStr As String, botRng As Range, botStr As String, vOffset As Double) As Range
 ```
 > Same as **NAG_TABLE_SEARCH** but we can search for two table headers and one vertical table column. We can do regex searching with this function
@@ -142,6 +148,22 @@ ___
 Function NAG_TB_MU_UI_VAL(schRng As Range, actRng As Range)
 ```
 > Same as **NAG_TB_MU_VAL**. Here **schRng **,  **actRng ** are the cell range of first row of schedule and actual data in the value column that has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_TB_UI_VAL_MULCOL(tb As Double, numSch As Integer, ParamArray colRngs() As Variant)
+```
+> Same as **NAG_TB_UI_VAL**. Here **colRngs** are the column ranges of of first row of schedule and actual data headers that start **numSch** schedule data headers, and rest of the headers to the right are actual data headers. 
+> The UI is calculated as actual - schedule. Each column has 1440 rows each for each minute data
+___
+
+```vba
+Function NAG_TB_UI_ATTR_MULCOL(attr As String, numSch As Integer, ParamArray colRngs() As Variant)
+```
+> Calculates the attribute of a set of columns
+> Same as **NAG_TB_UI_VAL**. Here **colRngs** are the column ranges of of first row of schedule and actual data headers that start **numSch** schedule data headers, and rest of the headers to the right are actual data headers. 
+> **attr** can be "MAX", "MIN", "MAX_TB", "MIN_TB", "MU", "AVG" 
+> The UI is calculated as actual - schedule. Each column has 1440 rows each for each minute data
 ___
 
 ```vba
@@ -291,19 +313,19 @@ Function MVC_QUARTERLY_MIN_TIME(firstCellRng As Range)
 ___
 
 ## ToDOs
-1. Add documenatation for NAG_TAB_SEARCH, NAG_TB_UI_VAL_MULCOL, NAG_TB_UI_ATTR_MULCOL function
-2. Create better functions for frequency calculations
-3. Create UI calculation for generators in GEN sheets
-4. Use multiple arguments for creating NAG_TB_UI functions for KAWAS GANDHAR RGPPL generators - [http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb](http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb)
-5. Button styling and colors
+1. Create better functions for frequency calculations
+2. Use multiple arguments for creating NAG_TB_UI functions for KAWAS GANDHAR RGPPL generators - [http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb](http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb) -- done
+3. Button styling and colors
 
 ## Important Formulas
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
-2. Thermal_Gen_mu = demand_met_mu(availability_mu) - drawal_mu - solar_mu - hydro_mu - wind_mu
-3. Requirement_mu = demand_met_mu + shortfall_mu
-4. Availability_mu = drawal_mu + state_gen_mu
-5. Availability_mu = requirement_mu - shortfall_mu
-6. shortfall_mu = load_shedding + freq_correction
+2. State_Generation = Availabiliy - Drawal
+3. Thermal_Gen = demand_met(availability) - drawal - solar - hydro - wind
+4. Availability = demand_met
+5. Requirement = demand_met + shortfall
+6. Availability = drawal + state_gen
+7. Availability = requirement - shortfall
+8. shortfall = load_shedding + freq_correction
 
 ## Useful Links
 1. Excel formula Calculation time saving tips - [http://professor-excel.com/15-ways-to-speed-up-excel/](http://professor-excel.com/15-ways-to-speed-up-excel/)
