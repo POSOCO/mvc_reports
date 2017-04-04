@@ -316,6 +316,7 @@ ___
 1. Create better functions for frequency calculations
 2. Use multiple arguments for creating NAG_TB_UI functions for KAWAS GANDHAR RGPPL generators - [http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb](http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb) -- done
 3. Button styling and colors
+4. RGPPL IR not present in dailydatanew, rgppl ir sch not present in gen raw
 
 ## Important Formulas
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
