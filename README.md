@@ -312,11 +312,71 @@ Function MVC_QUARTERLY_MIN_TIME(firstCellRng As Range)
 ```
 ___
 
+## Table Names
+```vba
+    If inp = "CONST_SCH" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]CONST_SCH!$1:$1")
+    ElseIf inp = "ISGS_DC" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]ISGS_DC!$1:$1")
+    ElseIf inp = "ISGS_SCH" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]ISGS_SCH!$1:$1")
+    ElseIf inp = "FLOW_GATE_SCH" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]FLOW_GATE_SCH!$1:$1")
+    ElseIf inp = "STATE_RAW" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]STATE_RAW!$3:$3")
+    ElseIf inp = "STATE_GEN" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]STATE_GEN!$3:$3")
+    ElseIf inp = "IRE" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]IRE!$4:$4")
+    ElseIf inp = "CONST_DATA" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]CONST_DATA!$1:$1")
+    ElseIf inp = "GEN_RAW" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]GEN_RAW!$3:$3")
+    ElseIf inp = "VOLT" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]VOLT!$3:$3")
+    ElseIf inp = "UI_REPORT" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]UI_REPORT!$1:$1")
+    ElseIf inp = "FREQ" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]FREQ!$1:$1")
+    ElseIf inp = "DER_STATE_SCH" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHEDULE_COMP!$2:$2")
+    ElseIf inp = "DER_IRE_SCH" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHEDULE_COMP!$21:$21")
+    ElseIf inp = "DER_SCHUPD_STATE" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHUPD_STATE!$1:$1")
+    ElseIf inp = "DER_SCHUPD_STATE_GEN" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHUPD_STATE_GEN!$1:$1")
+    ElseIf inp = "DER_SCHUPD_GEN" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHUPD_GEN!$1:$1")
+    ElseIf inp = "DER_SCHUPD_VOLT" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SCHUPD_VOLT!$1:$1")
+    ElseIf inp = "DER_SIGN_CHANGE" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_SIGN_CHANGE!$1:$1")
+    ElseIf inp = "DER_IRE_DATA" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_IRE_DATA!$1:$1")
+    ElseIf inp = "DER_IRE_NET" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_IRE_DATA!$1:$1")
+    ElseIf inp = "DER_FREQ" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_FREQ!$1:$1")
+    ElseIf inp = "DER_CONST" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]DER_CONST!$1:$1")
+    ElseIf inp = "GEN_MU" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]GEN_MU!$1:$1")
+    ElseIf inp = "GEN_OUTAGES" Then
+        Set getTableHRange = Range("[DATA_MVC.xlsx]GEN_OUTAGES!$1:$1")
+    Else
+        Set getTableHRange = Empty
+    End If
+```
 ## ToDOs
 1. Create better functions for frequency calculations
 2. Use multiple arguments for creating NAG_TB_UI functions for KAWAS GANDHAR RGPPL generators - [http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb](http://stackoverflow.com/questions/2630171/variable-number-of-arguments-in-vb) -- done
 3. Button styling and colors
 4. RGPPL IR not present in dailydatanew, rgppl ir sch not present in gen raw
+5. Damoh voltage header AKOL4 4_B1 KV coming 2 times
+6. Jhabua, SKS generation not mapped/present in PSP report
+7. Vadodara voltage not mapped/present in PSP report
+8. Create a function for instantaneous values like NAG_TB_UI_ATTR_MULCOL 
 
 ## Important Formulas
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
