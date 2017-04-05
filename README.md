@@ -379,6 +379,7 @@ ___
 8. Create a function for instantaneous values like NAG_TB_UI_ATTR_MULCOL 
 
 ## Important Formulas
+```
 1. Shortfall_MW = peak_hour_load_shedding+(0.035*peak_hr_demand*(50-peak_hr_freq))
 2. State_Generation = Availabiliy - Drawal
 3. Thermal_Gen = demand_met(availability) - drawal - solar - hydro - wind
@@ -387,6 +388,7 @@ ___
 6. Availability = drawal + state_gen
 7. Availability = requirement - shortfall
 8. shortfall = load_shedding + freq_correction
+```
 
 ## Useful Links
 1. Excel formula Calculation time saving tips - [http://professor-excel.com/15-ways-to-speed-up-excel/](http://professor-excel.com/15-ways-to-speed-up-excel/)
