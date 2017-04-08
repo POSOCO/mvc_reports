@@ -376,7 +376,7 @@ ___
 5. Damoh voltage header AKOL4 4_B1 KV coming 2 times
 6. Jhabua, SKS generation not mapped/present in PSP report
 7. Vadodara voltage not mapped/present in PSP report
-8. Create a function for instantaneous values like NAG_TB_UI_ATTR_MULCOL 
+8. Create documentation for NAG_INST_UI_ATTR_MULCOL, NAG_INST_UI_VAL_MULCOL functions
 
 ## Important Formulas
 ```
