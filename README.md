@@ -10,9 +10,25 @@ Function NAG_HSEARCH(rng As Range, str As String, vOffset As Double) As Range
 ___
 
 ```vba
+Function NAG_H_SEARCH(sht As String, str As String, vOffset As Double) As Range
+```
+> Search a Horizontal Range in the sheet **sht** for **str** and return a cell which of *vOffset* below from the searched cell. 
+
+This function uses NAG_HSEARCH and NAG_TABLE_HRange
+___
+
+```vba
 Function NAG_VSEARCH(rng As Range, str As String, hOffset As Double) As Range
 ```
 > Search a Vertical Range **rng** for **str** and return a cell which of *hOffset* aside from the searched cell
+___
+
+```vba
+Function NAG_V_SEARCH(sht As String, str As String, hOffset As Double) As Range
+```
+> Search a Vertical Range in Sheet **sht** for **str** and return a cell which of *hOffset* aside from the searched cell.
+
+This function uses NAG_VSEARCH and NAG_TABLE_VRange
 ___
 
 ```vba
